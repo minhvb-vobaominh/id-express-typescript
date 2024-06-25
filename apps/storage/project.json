@@ -1,0 +1,16 @@
+{
+  "name": "storage",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/storage/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "development",
+      "options": {
+        "commands": ["bun run --watch apps/storage/src/main.ts"]
+      }
+    }
+  }
+}
