@@ -1,8 +1,8 @@
-// services/example.service.ts
-import { Context, Service } from 'moleculer';
-import { MoleculerServiceSchema } from '../shared/types/moleculer.type';
+import { Context } from 'moleculer';
+import { Logger } from '@demo-3/shared';
+// import { MoleculerServiceSchema } from '../shared/types/moleculer.type';
 
-const exampleService: MoleculerServiceSchema = {
+const exampleService = {
   name: 'example',
 
   actions: {
@@ -16,7 +16,7 @@ const exampleService: MoleculerServiceSchema = {
 
   events: {
     'user.created'(ctx: Context<{}>) {
-      this.logger.info('User created event received:', ctx.params);
+      Logger.info('User created event received:', ctx.params);
     },
   },
 };
