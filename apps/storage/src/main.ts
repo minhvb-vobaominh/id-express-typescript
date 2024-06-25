@@ -1,7 +1,7 @@
 import express from 'express';
 import * as path from 'path';
 import { ServiceBroker } from 'moleculer';
-import { logger } from '@demo-3/libs';
+import { Logger } from '@demo-3/shared';
 
 const app = express();
 
@@ -18,21 +18,16 @@ const broker = new ServiceBroker({
 
 // Create a service
 broker.createService({
-  name: 'math',
+  name: 'storage',
   actions: {
-    add(ctx) {
-      return Number(ctx.params.a) + Number(ctx.params.b);
+    hello(ctx) {
+      return 'Hello from storage service';
     },
   },
 });
 
 // Start broker
-broker
-  .start()
-  // Call service
-  .then(() => broker.call('history.add', { a: 10, b: 10 }))
-  .then((res) => console.log('in math', res))
-  .catch((err) => console.error(`Error occurred! ${err.message}`));
+broker.start().catch((err) => console.error(`Error occurred! ${err.message}`));
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
@@ -40,16 +35,15 @@ app.get('/storage', (req, res) => {
   broker
     .call('api.hello')
     .then((result: any) => {
-      console.log(result);
+      Logger.info(`In storage side received: ${result}`);
     })
     .catch((err: Error) => {
-      console.log(err);
+      Logger.error(err);
     });
   res.send({ message: 'Welcome to storage!' });
 });
 
 const port = 3333;
 app.listen(port, () => {
-  logger();
-  console.log(`Listening at http://localhost:${port}/api`);
+  Logger.debug(`Listening at http://localhost:${port}/storage`);
 });

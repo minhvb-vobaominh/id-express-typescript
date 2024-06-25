@@ -1,0 +1,9 @@
+{
+  "name": "moleculer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/moleculer/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project moleculer --web",
+  "targets": {}
+}

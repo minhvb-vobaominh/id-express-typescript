@@ -1,6 +1,6 @@
 // services/example.service.ts
 import { Context, Service } from 'moleculer';
-import { MoleculerServiceSchema } from '../types/moleculer.type';
+import { MoleculerServiceSchema } from '../shared/types/moleculer.type';
 
 const exampleService: MoleculerServiceSchema = {
   name: 'example',

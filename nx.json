@@ -39,7 +39,9 @@
       },
       "exclude": [
         "app/storage-e2e/**/*",
-        "apps/storage-e2e/**/*"
+        "apps/storage-e2e/**/*",
+        "apps/user-e2e/**/*",
+        "apps/user-e2e/**/*"
       ]
     }
   ],

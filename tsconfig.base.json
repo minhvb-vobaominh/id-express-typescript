@@ -13,7 +13,9 @@
     "importHelpers": true,
     "skipDefaultLibCheck": true,
     "types": [
-      "bun-types"
+      "bun-types",
+      "node",
+      "express"
     ],
     "strict": true,
     "esModuleInterop": true,
@@ -27,11 +29,11 @@
     "noFallthroughCasesInSwitch": false,
     "baseUrl": ".",
     "paths": {
-      "@libs/*": [
-        "./libs/*"
+      "@demo-3/shared": [
+        "libs/shared/src/index.ts"
       ],
-      "@demo-3/libs": [
-        "libs/src/index.ts"
+      "@demo-3/moleculer": [
+        "libs/moleculer/src/index.ts"
       ]
     }
   },
