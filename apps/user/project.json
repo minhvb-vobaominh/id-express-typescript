@@ -38,6 +38,20 @@
           ]
         },
         "build-args": ["SERVICE_NAME=user", "SERVICE_PORT=5555"]
+      },
+      "configurations": {
+        "configurations": {
+          "production": {
+            "tags": [
+              "type=schedule",
+              "type=ref,event=branch",
+              "type=ref,event=tag",
+              "type=ref,event=pr",
+              "type=sha,prefix=sha-"
+            ],
+            "push": false
+          }
+        }
       }
     }
   }

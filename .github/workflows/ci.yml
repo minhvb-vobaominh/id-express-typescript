@@ -59,4 +59,4 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       - name: Build images
-        run: bun nx affected -t docker-build
+        run: bun nx affected -t docker-build:production
