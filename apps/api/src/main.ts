@@ -3,7 +3,7 @@ import express, { Application, Request, Response } from 'express';
 import { AppDataSource } from './config';
 
 import { ServiceBroker } from 'moleculer';
-import { UserController } from './controllers/UserController';
+import { UserController } from './controllers/user.controller';
 import { UserService } from './services/UserService';
 import { UserRepository } from './repositories/UserRepository';
 import { Logger } from '@demo-3/shared';

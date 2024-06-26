@@ -19,6 +19,26 @@
           "buildTarget": "user:build:production"
         }
       }
+    },
+    "docker-build": {
+      "executor": "@nx-tools/nx-container:build",
+      "dependsOn": ["build"],
+      "options": {
+        "engine": "docker",
+        "file": "Dockerfile",
+        "metadata": {
+          "images": ["user"],
+          "load": true,
+          "tags": [
+            "type=schedule",
+            "type=ref,event=branch",
+            "type=ref,event=tag",
+            "type=ref,event=pr",
+            "type=sha,prefix=sha-"
+          ]
+        },
+        "build-args": ["SERVICE_NAME=user", "SERVICE_PORT=5555"]
+      }
     }
   }
 }

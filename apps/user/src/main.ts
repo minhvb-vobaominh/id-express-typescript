@@ -9,7 +9,7 @@ app.get('/user', (req, res) => {
   res.send({ message: 'Welcome to user!' });
 });
 
-const port = process.env.PORT || 3333;
+const port = process.env.PORT || 5555;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/user`);
 });

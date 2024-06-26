@@ -12,11 +12,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "skipDefaultLibCheck": true,
-    "types": [
-      "bun-types",
-      "node",
-      "express"
-    ],
+    "types": ["bun-types", "node", "express"],
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -29,17 +25,9 @@
     "noFallthroughCasesInSwitch": false,
     "baseUrl": ".",
     "paths": {
-      "@demo-3/shared": [
-        "libs/shared/src/index.ts"
-      ],
-      "@demo-3/moleculer": [
-        "libs/moleculer/src/index.ts"
-      ]
+      "@demo-3/moleculer": ["libs/moleculer/src/index.ts"],
+      "@demo-3/shared": ["libs/shared/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp",
-    "dist"
-  ]
+  "exclude": ["node_modules", "tmp", "dist"]
 }
