@@ -43,5 +43,15 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      - name: Set up Bun.js
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install node_modules
+        run: bun install --no-cache
+
+      - uses: nrwl/nx-set-shas@v4
+
       - name: Build images
         run: bun nx affected -t docker-build
