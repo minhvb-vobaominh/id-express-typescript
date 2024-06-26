@@ -43,6 +43,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Set up Bun.js
         uses: oven-sh/setup-bun@v1
         with:
